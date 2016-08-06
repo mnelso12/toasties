@@ -15,25 +15,50 @@
 </head>
 <body>
 
+<!-- Nav Bar -->
+<div class="bs-component">
+<nav class="navbar navbar-default">
+<div class="container-fluid">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a class="navbar-brand" href="#">Toasties</a>
+<ul class="nav navbar-nav navbar-left">
+	<li><a href="#">Upload Speech</a></li>
+</ul>
+</div>
+
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+<ul class="nav navbar-nav navbar-right">
+<li><a href="#">Link</a></li>
+</ul>
+</div>
+</div>
+</nav>
+</div>
+
 <!-- Top Div: timer stuff -->
-<div align="center">
+<div align="center" style="padding: 20px;">
 	<p>
 		timer
-	
 	</p>
 </div>
 
 <!-- Middle Div: audience screen -->
 <div align="center">
-	<div style="height: 300px; background-color:blue">
-	<img id="audience" src="media/audience.png" alt="audience" height="100" width="400"></img>	
+	<div style="height: 700px;">
+	<img id="audience" src="media/audience.png" alt="audience" height="500" width="800"></img>	
 
 	</div>
 </div>
 
 <!-- Bottom Div: start, stop -->
-<div align="center">
-	<button id="start_button" type="button" class="btn btn-success">Start</button>
+<div align="center" style="padding:20px;">
+	<button id="start_button" type="button" style="margin-right: 20px;" class="btn btn-success">Start</button>
 	<button id="stop_button" type="button" class="btn btn-danger">Stop</button>
 </div>
 
