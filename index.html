@@ -6,7 +6,9 @@
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 <title>Toasties</title>
 
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!--<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+-->
+<link rel="stylesheet" href="css/bootstrap-darkly.css"></link>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
@@ -14,19 +16,25 @@
 <body>
 
 <!-- Top Div: timer stuff -->
-<div>
+<div align="center">
+	<p>
+		timer
 	
+	</p>
 </div>
 
 <!-- Middle Div: audience screen -->
-<div>
+<div align="center">
+	<div style="height: 300px; background-color:blue">
+	<img id="audience" src="media/audience.png" alt="audience" height="100" width="400"></img>	
 
+	</div>
 </div>
 
 <!-- Bottom Div: start, stop -->
 <div align="center">
-	<button type="button" class="btn btn-success">Start</button>
-	<button type="button" class="btn btn-danger">Stop</button>
+	<button id="start_button" type="button" class="btn btn-success">Start</button>
+	<button id="stop_button" type="button" class="btn btn-danger">Stop</button>
 </div>
 
 
