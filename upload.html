@@ -17,7 +17,7 @@
 <script src="scripts/bootstrap-3.3.7/js/bootstrap.min.js"></script>
 
 </head>
-<body>
+<body align="center">
 
 <!-- Nav Bar -->
 <div class="bs-component">
@@ -36,7 +36,6 @@
 	<li><a href="index.html">Home</a></li>
 	<li><a href="upload.html">Upload Speech</a></li>
 	<li><a href="results.html">Results</a></li>
-	<li><a href="#">Settings</a></li>
 	<li><a href="#">Help</a></li>
 </ul>
 </div>
@@ -50,15 +49,22 @@
 </nav>
 </div>
 
-
-<input id="speech_file" type="file"></input>
+<div style="margin-left: 20px; margin-right: 20px;">
+<form align="center" valign="center" height="800px;">
+<br>
+<h2>Upload Text File (.txt)</h2>
+<br>
+<input id="speech_file" align="center" type="file" style="align: 'center'; color: #3498db;"></input>
 <br>
 <button id="submit" type="button" style="margin-right: 20px;" class="btn btn-success">Submit</button>
+</form>
+</div>
 
 
     <video></video>
+    <!--
     <script src="scripts/webcam.js"></script>
-
+	-->
 
 </body>
 

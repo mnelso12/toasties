@@ -52,7 +52,6 @@ font-size: 24;
 	<li><a href="index.html">Home</a></li>
 	<li><a href="upload.html">Upload Speech</a></li>
 	<li><a href="results.html">Results</a></li>
-	<li><a href="#">Settings</a></li>
 	<li><a href="#">Help</a></li>
 </ul>
 </div>
@@ -70,12 +69,12 @@ font-size: 24;
 <br>
 
 <!-- Title and Time -->
-<h1 style="font-size: 50px;">My Speech - Comm 101</h1>
+<h1 id="speech_name" style="font-size: 50px;">My Speech - Comm 101</h1>
 <br>
-<h1>00:23:46</h1>
+<h1 id="results_time">00:23:46</h1>
 <br>
-		<button type="button" style="margin-left: 5px; margin-right: 5px;" class="btn btn-primary">Play Audio</button>	
-		<button type="button" style="margin-left: 5px; margin-right: 5px;" class="btn btn-primary">Play Video</button>	
+		<button type="button" id="play_audio" style="margin-left: 5px; margin-right: 5px;" class="btn btn-primary">Play Audio</button>	
+		<button type="button" id="play_video" style="margin-left: 5px; margin-right: 5px;" class="btn btn-primary">Play Video</button>	
 
 <hr>
 
@@ -101,22 +100,22 @@ font-size: 24;
 <div class="container">
 	<div class="col-md-4">
 			<br>
-<h1 align="right">Likes: 163</h1>
-<h1 align="right">Umms: 78</h1>
-<h1 align="right">Ahhs: 12</h1>
-<h1 align="right">Okays: 12</h1>
-<h1 align="right">You knows: 12</h1>
-<h1 align="right">Rights: 12</h1>
+<h1 align="right" id="Likes">Likes: 163</h1>
+<h1 align="right" id="Umms">Umms: 78</h1>
+<h1 align="right" id="Ahhs">Ahhs: 12</h1>
+<h1 align="right" id="Okays">Okays: 12</h1>
+<h1 align="right" id="You knows">You knows: 12</h1>
+<h1 align="right" id="Rights">Rights: 12</h1>
 	</div>
 	<div class="col-md-5">
 	<div class="chart">
 		<br>
-		<div style="width: 40px;">4</div>
-		<div style="width: 80px;">8</div>
-		<div style="width: 150px;">15</div>
-		<div style="width: 160px;">16</div>
-		<div style="width: 230px;">23</div>
-		<div style="width: 420px;">42</div>
+		<div style="width: 40px;" id="likes_num">4</div>
+		<div style="width: 80px;" id="umms_num">8</div>
+		<div style="width: 150px;" id="ahhs_num">15</div>
+		<div style="width: 160px;" id="okays_num">16</div>
+		<div style="width: 230px;" id="you_knows_num">23</div>
+		<div style="width: 420px;" id="rights_num">42</div>
 	</div>
 	</div>
 </div>
@@ -140,4 +139,6 @@ font-size: 24;
 <br>
 
 </body>
+
+<script type="text/javascript" src="scripts/results.js"></script>
 </html>
