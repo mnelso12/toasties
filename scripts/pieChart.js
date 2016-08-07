@@ -1,5 +1,32 @@
 console.log('in pie chart js');
 
+////////////////////// keywords stuff //////////////////////////
+var keywords = {
+	'arr':['jared', 'twilio', 'cell phones', 'code', 'computers', 'MLH', 'hacker', 'gross'],
+};
+
+var buttons = {
+		'0':'<button type="button" style="margin-left: 5px; margin-right: 5px;" class="btn btn-info">',	
+		'1':'<button type="button" style="margin-left: 5px; margin-right: 5px;" class="btn btn-success">',
+		'2':'<button type="button" style="margin-left: 5px; margin-right: 5px;" class="btn btn-danger">',	
+		'3':'<button type="button" style="margin-left: 5px; margin-right: 5px;" class="btn btn-secondary">',	
+		'4':'<button type="button" style="margin-left: 5px; margin-right: 5px;" class="btn btn-warning">',	
+		'5':'<button type="button" style="margin-left: 5px; margin-right: 5px;" class="btn btn-primary">',
+};
+
+var arr = keywords['arr'];
+for (var i=0; i<arr.length; i++) {
+	$('#keywords_div').append($(buttons[i%6] + arr[i] + "</button>"));	
+}
+
+
+
+
+
+
+
+////////////////////// chart stuff //////////////////////////
+
 // bar chart
 var filler_nums = {
 	'likes_num':16,
