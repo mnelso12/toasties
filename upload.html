@@ -8,6 +8,7 @@
 
 <!--<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 -->
+
 <link rel="stylesheet" href="css/bootstrap-darkly.css"></link>
 <script src="scripts/jquery-1.12.4/jquery-1.12.4.min.js"></script>
 <script src="scripts/bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -46,33 +47,15 @@
 </nav>
 </div>
 
-<!-- Top Div: timer stuff -->
-<div align="center" style="padding: 20px;">
-	<h2 id="timer">
-	</h2>
-</div>
 
-<!-- Middle Div: audience screen -->
-<div align="center">
-	<div>
-	<img id="audience" src="media/audience.png" alt="audience" height="500" width="800"></img>	
-
-	</div>
-</div>
-
-<!-- Bottom Div: start, stop -->
+<input id="speech_file" type="file"></input>
 <br>
-<br>
-<div align="center" style="padding:20px;">
-	<button id="start_button" type="button" style="margin-right: 20px;" class="btn btn-success">Start</button>
-	<button id="stop_button" type="button" class="btn btn-danger">Stop</button>
-</div>
-
+<button id="submit" type="button" style="margin-right: 20px;" class="btn btn-success">Submit</button>
 
 
 
 </body>
 
-<script src="scripts/index.js"></script>
+<script src="scripts/upload.js"></script>
 
 </html>
