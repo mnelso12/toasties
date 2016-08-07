@@ -1,4 +1,8 @@
 // Main Javascript file
+var kairos_api_url = "https://api-dev.kairos.com/";
+var kairos_api_id = "7dc697b8";
+var kairos_api_key = "de47fb31888ed4c71e4eff9700ebee52";
+
 
 //////////////////////////////////
 //          Stopwatch           //
@@ -96,6 +100,7 @@ timer = document.getElementById("timer");
 start_button.onclick = function()
 {
     timer.innerHTML = "start:00:00:00";
+    //kairos_post_request();
 
     // start recording (audio video)
 };
@@ -108,13 +113,30 @@ stop_button.onclick = function()
 };
 
 
-function start_record()
-{
-
+function start_record() {
+    // google api record stuff
 }
 
-function stop_record()
-{
-
+function stop_record() {
+    // google api record stuff
 }
 
+/*
+function kairos_post_request() {
+    var header_settings = {
+        "Content-type" : "application/json",
+        "app_id" : kairos_api_id,
+        "app_key": kairos_api_key
+    };
+
+    jQuery.ajax(kairos_api_url, {
+        headers : header_settings,
+        type : "POST",
+        dataType : "raw",
+        data : JSON.stringify(data),
+        success : callback,
+        error : callback
+    });
+}
+
+*/
