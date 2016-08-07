@@ -176,3 +176,30 @@ function kairos_post_request() {
     };
     request.send();
 }
+
+/////////////////////////////////
+//          Templates          //
+/////////////////////////////////
+// The following are templates in 
+// order to perform certain actions 
+// and should not be used in thier 
+// current state to perform actions.
+
+function generic_post_request() {
+    var request = new XMLHttpRequest();
+
+    request.open('POST', url_to_post_to);
+
+    // headers if necessary
+    request.setRequestHeader("dictionary", "format");
+
+    // once all data has been transmitted
+    request.onreadystatechange = function () {
+        if (this.readyState === 4) {
+            // do something
+            // console.log for debug
+            // send data somewhere else maybe
+        }
+    };
+    request.send();
+}
