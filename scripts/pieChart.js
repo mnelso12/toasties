@@ -1,3 +1,5 @@
+console.log('in pie chart js');
+
 // bar chart
 var filler_nums = {
 	'likes_num':16,
@@ -5,7 +7,7 @@ var filler_nums = {
 	'ahhs_num':9,
 	'okays_num':7,
 	'you_knows_num':23,
-	'rights_num':5
+	'rights_num':5,
 };
 
 for (key in filler_nums) {
@@ -21,11 +23,10 @@ var filler_names = {
 	'Ahhs':9,
 	'Okays':7,
 	'You knows':23,
-	'Rights':5
-}
+	'Rights':5,
+};
 
 for (key in filler_names) {
-console.log(filler_names[key]);
 	var label = key + ': ' + filler_names[key];
 	console.log(label);
 	$("#"+key).text(label);
@@ -39,7 +40,7 @@ var pie_chart_nums = {
 	'Positive':86,
 	'Neutral':12,
 	'Negative':2
-}
+};
 
 var pie_chart_nums_array = [
 	['Task', 'hours per day'],
@@ -52,7 +53,6 @@ var pie_chart_nums_array = [
 google.charts.load('current', {'packages':['corechart', 'bar']});
 google.charts.setOnLoadCallback(drawChart);
 
-console.log('in pie chart js');
 
 function drawChart() {
 	
