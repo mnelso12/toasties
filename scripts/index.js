@@ -172,9 +172,14 @@ function kairos_post_request() {
             console.log('Status:', this.status);
             console.log('Headers:', this.getAllResponseHeaders());
             console.log('Body:', this.responseText);
+            parse_response(this.responseText);
         }
     };
     request.send();
+}
+
+function parse_response(text) {	
+	var parsed = JSON.parse(text);
 }
 
 /////////////////////////////////
