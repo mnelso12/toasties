@@ -4,8 +4,9 @@
 //          Stopwatch           //
 //////////////////////////////////
 
+/*
 var cls_stopwatch = {
-    running: 0
+    running: 0,
     start_time: 0,
     start_time_str: "00:00:00",
     
@@ -62,6 +63,7 @@ function stop(sw, timer, clk_timer) {
     clearInterval(clocktimer);
 }
 
+*/
 ///////////////////////////////////////////
 //          End Stopwatch Stuff          //
 ///////////////////////////////////////////
@@ -93,10 +95,26 @@ timer = document.getElementById("timer");
 
 start_button.onclick = function()
 {
-    timer.innerHTML = (new Date()).getTime();
+    timer.innerHTML = "start:00:00:00";
+
+    // start recording (audio video)
 };
 
 stop_button.onclick = function()
 {
-    timer.innerHTML = "00:00:00";
+    timer.innerHTML = "end:00:00:00";
+    
+    // call kairos api with recorded data
 };
+
+
+function start_record()
+{
+
+}
+
+function stop_record()
+{
+
+}
+
