@@ -141,8 +141,8 @@ function kairos_post_request() {
 
     request.open('POST', 'https://api.kairos.com/media?source=http://media.kairos.com/test.flv');
 
-    request.setRequestHeader('app_id', '4985f625');
-    request.setRequestHeader('app_key', '24ad28c4dd3c94df26b2ac78d96a5ccf');
+    request.setRequestHeader('app_id', kairos_api_id);
+    request.setRequestHeader('app_key', kairos_api_key);
 
     request.onreadystatechange = function () {
         if (this.readyState === 4) {
@@ -152,4 +152,7 @@ function kairos_post_request() {
         }
     };
     request.send();
+}
+function callback() {
+    console.log("callback");
 }
