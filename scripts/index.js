@@ -1,11 +1,7 @@
 // Main Javascript file
 // Initialize variables
-var kairos_api_url = "https://api-dev.kairos.com/media";
-var kairos_api_id = "7dc697b8";
-var kairos_api_key = "de47fb31888ed4c71e4eff9700ebee52";
-var random_video = "https://ia601400.us.archive.org/11/items/RandomVideos1/12_Random_Videos_Collection_1.m4v";
 
-// get stopwatch to work
+// get stopwatch to work - DONE!
 // get video/ audio to work
 // connect to back end
 // ???
@@ -65,7 +61,7 @@ cls_stopwatch.time = function() {
 };
 
 cls_stopwatch.update = function() {
-    console.log("updating timer");
+    //console.log("updating timer");
     timer.innerHTML = format_time_output(this.time());
 };
 
@@ -75,11 +71,13 @@ function start() {
     cls_stopwatch.start();
 }
 
+// stops timer!
 function stop() {
     cls_stopwatch.stop();
     clearInterval(clocktimer);
 }
 
+// formats time into 00:00:00:000 format
 function format_time_output(time) {
     var h = 0; 
     var m = 0;
@@ -98,6 +96,7 @@ function format_time_output(time) {
     return newTime;
 }
 
+// pads numbers like 1-9 when they need a leading zero
 function pad (num, place) {
     if (place == 2)
     {
@@ -125,27 +124,15 @@ function pad (num, place) {
 //          End Stopwatch Stuff          //
 ///////////////////////////////////////////
 
-// Set up variables
-var URL, data;
-var start_button, stop_button;
-var timer;
-//var stop_watch = new cls_stopwatch();
-var clocktimer;
+// kairons api details
+var kairos_api_url = "https://api-dev.kairos.com/media";
+var kairos_api_id = "7dc697b8";
+var kairos_api_key = "de47fb31888ed4c71e4eff9700ebee52";
 
-/*
-// Set up http request
-var xmlhttp = new XMLHttpRequest();
+// Set up other variables
+var start_button, stop_button, timer;
 
-// Open request and send (no body?)
-xmlhttp.open("GET", URL, true);
-xmlhttp.send( null );
-
-// store reponse in data
-data = xmlHttp.responseText;
-console.log(data);
-*/
-
-
+// get elements from the html doc
 start_button = document.getElementById("start_button");
 stop_button = document.getElementById("stop_button");
 timer = document.getElementById("timer");
@@ -154,41 +141,25 @@ start_button.onclick = function() {
     timer.innerHTML = "Start";
     start();
     // kairos_post_request();
-
-    // start recording (audio video)
+    //TODO:start recording (audio video)
 };
 
 stop_button.onclick = function() {
     stop();
-    // call kairos api with recorded data
+    //TODO:call kairos api with recorded data
 };
 
 
 function start_record() {
-    // google api record stuff
+    //TODO? google api record stuff
 }
 
 function stop_record() {
-    // google api record stuff
+    //TODO? google api record stuff
 }
 
+// sends request to kairos api to check out video for details
 function kairos_post_request() {
-    /*
-       var header_settings = {
-       "Content-type" : "application/json",
-       "app_id" : kairos_api_id,
-       "app_key": kairos_api_key
-       };
-
-       jQuery.ajax(kairos_api_url, {
-       headers : header_settings,
-       type : "POST",
-       dataType : "raw",
-       data : JSON.stringify(random_video),
-       success : callback(),
-       error : callback()
-       });
-       */
     var request = new XMLHttpRequest();
 
     request.open('POST', 'https://api.kairos.com/media?source=http://media.kairos.com/test.flv');
