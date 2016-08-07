@@ -176,6 +176,3 @@ function kairos_post_request() {
     };
     request.send();
 }
-function callback() {
-    console.log("callback");
-}
