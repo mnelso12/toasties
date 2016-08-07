@@ -1,8 +1,9 @@
 // Main Javascript file
-var kairos_api_url = "https://api-dev.kairos.com/";
+// Initialize variables
+var kairos_api_url = "https://api-dev.kairos.com/media";
 var kairos_api_id = "7dc697b8";
 var kairos_api_key = "de47fb31888ed4c71e4eff9700ebee52";
-
+var random_video = "https://ia601400.us.archive.org/11/items/RandomVideos1/12_Random_Videos_Collection_1.m4v";
 
 //////////////////////////////////
 //          Stopwatch           //
@@ -97,16 +98,14 @@ start_button = document.getElementById("start_button");
 stop_button = document.getElementById("stop_button");
 timer = document.getElementById("timer");
 
-start_button.onclick = function()
-{
+start_button.onclick = function() {
     timer.innerHTML = "start:00:00:00";
-    //kairos_post_request();
+    kairos_post_request();
 
     // start recording (audio video)
 };
 
-stop_button.onclick = function()
-{
+stop_button.onclick = function() {
     timer.innerHTML = "end:00:00:00";
     
     // call kairos api with recorded data
@@ -121,8 +120,8 @@ function stop_record() {
     // google api record stuff
 }
 
-/*
 function kairos_post_request() {
+/*
     var header_settings = {
         "Content-type" : "application/json",
         "app_id" : kairos_api_id,
@@ -133,10 +132,24 @@ function kairos_post_request() {
         headers : header_settings,
         type : "POST",
         dataType : "raw",
-        data : JSON.stringify(data),
-        success : callback,
-        error : callback
+        data : JSON.stringify(random_video),
+        success : callback(),
+        error : callback()
     });
-}
-
 */
+    var request = new XMLHttpRequest();
+
+    request.open('POST', 'https://api.kairos.com/media?source=http://media.kairos.com/test.flv');
+
+    request.setRequestHeader('app_id', '4985f625');
+    request.setRequestHeader('app_key', '24ad28c4dd3c94df26b2ac78d96a5ccf');
+
+    request.onreadystatechange = function () {
+        if (this.readyState === 4) {
+            console.log('Status:', this.status);
+            console.log('Headers:', this.getAllResponseHeaders());
+            console.log('Body:', this.responseText);
+        }
+    };
+    request.send();
+}
