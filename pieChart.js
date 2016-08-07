@@ -15,6 +15,7 @@ function drawChart() {
 	var options = {
 		backgroundColor: 'transparent',
 		is3D: true,
+		chartArea: {'width': '80%', 'height': '90%'},
 		slices: {
 			0: { color: '#00bc8c' },
 			1: { color: '#3498db'},
@@ -24,7 +25,7 @@ function drawChart() {
 			textStyle: { color : 'white', annotations: {
 			    textStyle: {
 					fontName: 'Verdana',
-					fontSize: '55',
+					fontSize: 5,
 					bold: true,
 					// The color of the text.
 					color: '#871b47',
@@ -38,7 +39,7 @@ function drawChart() {
 		annotations: {
 			textStyle: {
 				fontName: 'Verdana',
-				fontSize: 100,
+				fontSize: 3,
 				bold: true,
 				// The color of the text.
 				color: '#ffffff',
