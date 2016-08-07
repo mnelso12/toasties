@@ -6,7 +6,8 @@
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 <title>Toasties</title>
 
-<!--<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- old css code
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 -->
 <link rel="stylesheet" href="css/bootstrap-darkly.css"></link>
 <script src="scripts/jquery-1.12.4/jquery-1.12.4.min.js"></script>
@@ -55,6 +56,7 @@
 <!-- Middle Div: audience screen -->
 <div align="center">
 	<div>
+
 	<img id="audience" src="media/audience.png" alt="audience" height="500" width="800"></img>	
 
 	</div>
@@ -68,6 +70,7 @@
 	<button id="stop_button" type="button" class="btn btn-danger">Stop</button>
 </div>
 
+<!-- Supposed to be the code for taking in audio/video from user -->
 <form action="server.cgi" method="post" enctype="multipart/form-data">
     <input type="file" name="video" accept="video/*" capture>
     <input type="submit" value="Upload">

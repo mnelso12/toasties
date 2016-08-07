@@ -5,6 +5,12 @@ var kairos_api_id = "7dc697b8";
 var kairos_api_key = "de47fb31888ed4c71e4eff9700ebee52";
 var random_video = "https://ia601400.us.archive.org/11/items/RandomVideos1/12_Random_Videos_Collection_1.m4v";
 
+// get stopwatch to work
+// get video/ audio to work
+// connect to back end
+// ???
+// profit $$$
+
 //////////////////////////////////
 //          Stopwatch           //
 //////////////////////////////////
