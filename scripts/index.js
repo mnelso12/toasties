@@ -100,7 +100,7 @@ timer = document.getElementById("timer");
 
 start_button.onclick = function() {
     timer.innerHTML = "start:00:00:00";
-    kairos_post_request();
+    // kairos_post_request();
 
     // start recording (audio video)
 };

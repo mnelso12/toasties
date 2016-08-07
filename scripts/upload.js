@@ -1,3 +1,11 @@
+var submit_button = document.getElementById("submit");
+console.log("hello");
+
+submit_button.onclick = function() {
+    httpGetAsync();
+};
+
+/*
 var file = $("#speech_file");
 console.log(file);
 
@@ -9,25 +17,24 @@ $("#submit").click(function() {
 
 $(document).ready(function(){
 
-	console.log(httpGetAsync('http://facebook.com'));
+    console.log("got here");
+	httpGetAsync('http://google.com');
 
 });
+*/
 
-function httpGetAsync(theUrl, callback)
+function httpGetAsync()
 {
+    console.log("got here");
 	var xmlHttp = new XMLHttpRequest();
+    var url = 'https://raw.githubusercontent.com/mnelso12/toasties/master/README.md';
+
 	xmlHttp.onreadystatechange = function() { 
-		if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
-			callback(xmlHttp.responseText);
-	}
-	xmlHttp.open("GET", theUrl, true); // true for asynchronous 
+		if (xmlHttp.readyState == 4) {
+            console.log("got here2");
+			console.log(xmlHttp.responseText);
+        }
+	};
+	xmlHttp.open("GET", url, true); // true for asynchronous 
 	xmlHttp.send(null);
-}
-
-
-function httpGet(theUrl) {
-	var xmlHttp = new XMLHttpRequest();
-	xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
-	xmlHttp.send( null );
-	return xmlHttp.responseText;
 }
