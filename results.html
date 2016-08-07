@@ -6,8 +6,22 @@
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 <title>Toasties</title>
 
+<style>
+
+.chart div {
+font: 24px sans-serif;
+	  background-color: steelblue;
+	  text-align: right;
+padding: 10px;
+margin: 15px;
+color: white;
+font-size: 24;
+}
+
+</style>
+
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<script type="text/javascript" src="pieChart.js"></script>
+<script type="text/javascript" src="scripts/pieChart.js"></script>
 
 <!--<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 -->
@@ -60,15 +74,21 @@
 			<h1 style="font-size: 90px;">Sensitivity</h1>
 	</div>
 	<div class="col-md-7">
-			<div id="piechart" style="width: 1000px; height: 800px;"></div>
+			<div id="pieChart" style="width: 900px; height: 900px;"></div>
 	</div>
 </div>
 
+
+<!-- Translucent Thing -->
+
+
+
+
 <!-- Filler Words -->
 <hr>
+<h1 style="font-size: 90px;">Fillers</h1>
 <div class="container">
-	<div class="col-md-3">
-			<h1 style="font-size: 90px;">Fillers</h1>
+	<div class="col-md-4">
 			<br>
 <h1 align="right">Likes: 163</h1>
 <h1 align="right">Umms: 78</h1>
@@ -78,7 +98,15 @@
 <h1 align="right">Rights: 12</h1>
 	</div>
 	<div class="col-md-5">
-			<div id="piechart" style="width: 1000px; height: 800px;"></div>
+	<div class="chart">
+		<br>
+		<div style="width: 40px;">4</div>
+		<div style="width: 80px;">8</div>
+		<div style="width: 150px;">15</div>
+		<div style="width: 160px;">16</div>
+		<div style="width: 230px;">23</div>
+		<div style="width: 420px;">42</div>
+	</div>
 	</div>
 </div>
 
