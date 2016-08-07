@@ -15,66 +15,112 @@ var random_video = "https://ia601400.us.archive.org/11/items/RandomVideos1/12_Ra
 //          Stopwatch           //
 //////////////////////////////////
 
-/*
+var clocktimer;     // interval timer
 var cls_stopwatch = {
     running: 0,
     start_time: 0,
     start_time_str: "00:00:00",
-    
-    var now = function () {
-        return (new Date()).getTime();
-    };
-
-    //public
-    this.start = function() {
-        if (running === 0) {
-            start_time = now();
-            running = 1;
-        }
-        else {
-            // nothing
-        }
-    };
-
-    this.stop = function() {
-        if (running == 1) {
-            running = 0;
-        }
-        else {
-            // nothing
-        }
-    };
-
-    this.reset = function() {
-        start_time = 0;
-        running = 0;
-    };
-
-    this.time = function() {
-        if (running == 1){
-            return  now() - start_time;
-        }
-        else {
-            return 0;
-        }
-    };
 };
 
-function update(sw, timer) {
-    timer.innerHTML = sw.time();
+// gets current time
+cls_stopwatch.now = function () {
+    return (new Date()).getTime();
+};
+
+// if not running start timer
+cls_stopwatch.start = function() {
+    if (this.running === 0) {
+        this.start_time = this.now();
+        this.running = 1;
+    }
+    else {
+        // nothing
+    }
+};
+
+// if running stop timer
+cls_stopwatch.stop = function() {
+    if (this.running == 1) {
+        this.running = 0;
+    }
+    else {
+        // nothing
+    }
+};
+
+// reset the timer (kinda the same as stop)
+cls_stopwatch.reset = function() {
+    this.start_time = 0;
+    this.running = 0;
+};
+
+// gets the current time elapsed 
+cls_stopwatch.time = function() {
+    if (this.running == 1){
+        return  this.now() - this.start_time;
+    }
+    else {
+        return 0;
+    }
+};
+
+cls_stopwatch.update = function() {
+    console.log("updating timer");
+    timer.innerHTML = format_time_output(this.time());
+};
+
+// if this throws error ignore it is right :P
+function start() {
+    clocktimer = setInterval("cls_stopwatch.update()", 1);
+    cls_stopwatch.start();
 }
 
-function start(sw, timer, clk_timer) {
-    clocktimer = setInterval(update(), 1);
-    sw.start();
-}
-
-function stop(sw, timer, clk_timer) {
-    sw.stop();
+function stop() {
+    cls_stopwatch.stop();
     clearInterval(clocktimer);
 }
 
-*/
+function format_time_output(time) {
+    var h = 0; 
+    var m = 0;
+    var s = 0;
+    var ms = 0;
+    var formated_time;
+
+    h = Math.floor( time / (60 * 60 * 1000) );
+    time = time % (60 * 60 * 1000);
+    m = Math.floor( time / (60 * 1000) );
+    time = time % (60 * 1000);
+    s = Math.floor( time / 1000 );
+    ms = time % 1000;
+
+    newTime = pad(h, 2) + ':' + pad(m, 2) + ':' + pad(s, 2) + ':' + pad(ms,3);
+    return newTime;
+}
+
+function pad (num, place) {
+    if (place == 2)
+    {
+        if (num > 9) {
+            return num;
+        }
+        else {
+            return "0"+num;
+        }
+    }
+    if (place == 3) {
+        if (num > 99) {
+            return num;
+        }
+        else if (num > 9) {
+            return "0" + num;
+        }
+        else {
+            return "00" + num;
+        }
+    }
+}
+
 ///////////////////////////////////////////
 //          End Stopwatch Stuff          //
 ///////////////////////////////////////////
@@ -105,15 +151,15 @@ stop_button = document.getElementById("stop_button");
 timer = document.getElementById("timer");
 
 start_button.onclick = function() {
-    timer.innerHTML = "start:00:00:00";
+    timer.innerHTML = "Start";
+    start();
     // kairos_post_request();
 
     // start recording (audio video)
 };
 
 stop_button.onclick = function() {
-    timer.innerHTML = "end:00:00:00";
-    
+    stop();
     // call kairos api with recorded data
 };
 
@@ -127,22 +173,22 @@ function stop_record() {
 }
 
 function kairos_post_request() {
-/*
-    var header_settings = {
-        "Content-type" : "application/json",
-        "app_id" : kairos_api_id,
-        "app_key": kairos_api_key
-    };
+    /*
+       var header_settings = {
+       "Content-type" : "application/json",
+       "app_id" : kairos_api_id,
+       "app_key": kairos_api_key
+       };
 
-    jQuery.ajax(kairos_api_url, {
-        headers : header_settings,
-        type : "POST",
-        dataType : "raw",
-        data : JSON.stringify(random_video),
-        success : callback(),
-        error : callback()
-    });
-*/
+       jQuery.ajax(kairos_api_url, {
+       headers : header_settings,
+       type : "POST",
+       dataType : "raw",
+       data : JSON.stringify(random_video),
+       success : callback(),
+       error : callback()
+       });
+       */
     var request = new XMLHttpRequest();
 
     request.open('POST', 'https://api.kairos.com/media?source=http://media.kairos.com/test.flv');
